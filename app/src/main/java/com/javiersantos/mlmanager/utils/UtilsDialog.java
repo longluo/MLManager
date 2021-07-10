@@ -100,7 +100,8 @@ public class UtilsDialog {
     }
 
     public static MaterialDialog showProFeatures(final Context context) {
-        final MaterialSimpleListAdapter adapter = new MaterialSimpleListAdapter(context);
+//        final MaterialSimpleListAdapter adapter = new MaterialSimpleListAdapter(context);
+        final MaterialSimpleListAdapter adapter = new MaterialSimpleListAdapter((MaterialSimpleListAdapter.Callback) context);
         adapter.add(new MaterialSimpleListItem.Builder(context)
                 .content(context.getResources().getString(R.string.pro_feature_1))
                 .icon(new IconicsDrawable(context).icon(GoogleMaterial.Icon.gmd_visibility_off).color(Color.GRAY).sizeDp(18))
@@ -125,10 +126,10 @@ public class UtilsDialog {
         MaterialDialog.Builder materialBuilder = new MaterialDialog.Builder(context)
                 .title(context.getResources().getString(R.string.action_buy) + " (" + context.getResources().getString(R.string.action_buy_description) + ")")
                 .icon(ContextCompat.getDrawable(context, R.mipmap.ic_launcher_pro))
-                .adapter(adapter, new MaterialDialog.ListCallback() {
-                    @Override
-                    public void onSelection(MaterialDialog materialDialog, View view, int i, CharSequence charSequence) {}
-                })
+//                .adapter(adapter, new MaterialDialog.ListCallback() {
+//                    @Override
+//                    public void onSelection(MaterialDialog materialDialog, View view, int i, CharSequence charSequence) {}
+//                })
                 .positiveText(context.getResources().getString(R.string.action_buy) + " ($1.43)")
                 .negativeText(context.getResources().getString(R.string.button_later))
                 .onPositive(new MaterialDialog.SingleButtonCallback() {
